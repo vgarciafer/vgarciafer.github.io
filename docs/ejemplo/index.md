@@ -1,4 +1,4 @@
-
+ <script src="https://unpkg.com/force-graph@1.42.9/dist/force-graph.min.js"></script>
   <div id="graph"></div>
 
   <script>
