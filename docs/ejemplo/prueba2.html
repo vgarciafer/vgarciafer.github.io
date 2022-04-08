@@ -9,7 +9,7 @@ import * as d3 from "https://cdn.skypack.dev/d3@7";
 const div = d3.selectAll("div");
 
 </script>
-<script src="../js/force-graph.js"></script>
+<script src="js/force-graph.js"></script>
 
 </head>
 
@@ -18,7 +18,7 @@ const div = d3.selectAll("div");
 
   <script>
 
- fetch('../datos/miserables.json').then(res => res.json()).then(data => {
+ fetch('datos/miserables.json').then(res => res.json()).then(data => {
       const Graph = ForceGraph(miserables, {
 	  nodeId: d => d.id,
 	  nodeGroup: d => d.group,
