@@ -14,7 +14,7 @@ const div = d3.selectAll("div");
    <script>
     
 	   fetch('datos/miserables.json').then(res => res.json()).then( data => { 
-		 ForceGraph(miserables, {
+		 ForceGraph(data, {
 			  nodeId: d => d.id,
 			  nodeGroup: d => d.group,
 			  nodeTitle: d => `${d.id}\n${d.group}`,
