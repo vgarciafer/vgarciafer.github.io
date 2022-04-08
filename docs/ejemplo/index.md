@@ -1,11 +1,10 @@
 
- <head>
+layout: page
+title: "UOC Master"
+permalink: /URL-PATH/
+
  <script src="https://unpkg.com/force-graph@1.42.9/dist/force-graph.min.js"></script>
-</head>
-
-<body>
   <div id="graph"></div>
-
   <script>
  fetch('datos/starwars-episode-1-interactions.json').then(res => res.json()).then(data => {
       const Graph = ForceGraph()
