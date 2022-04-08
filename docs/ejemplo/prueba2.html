@@ -19,7 +19,7 @@ const div = d3.selectAll("div");
 			  nodeGroup: d => d.group,
 			  nodeTitle: d => `${d.id}\n${d.group}`,
 			  linkStrokeWidth: l => Math.sqrt(l.value),
-			  width,
+			  width: 1,
 			  height: 600,
 			  invalidation // a promise to stop the simulation when the cell is re-run
 			})  
