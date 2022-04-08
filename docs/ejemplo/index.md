@@ -1,9 +1,9 @@
 
+ <head>
  <script src="https://unpkg.com/force-graph@1.42.9/dist/force-graph.min.js"></script>
 </head>
 
 <body>
-  <div id="graph"></div>
   <div id="graph"></div>
 
   <script>
