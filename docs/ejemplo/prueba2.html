@@ -23,8 +23,8 @@
        .onNodeDragEnd(node => {
         	node.fx = node.x;
         	node.fy = node.y;
+	      }
 	.onNodeClick(node => {
-        // Center/zoom on node
         Graph.centerAt(node.x, node.y, 1000);
         Graph.zoom(8, 1000);
       });
