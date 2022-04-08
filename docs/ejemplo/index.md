@@ -1,4 +1,7 @@
-  fetch('datos/starwars-episode-1-interactions.json').then(res => res.json()).then(data => {
+  <div id="graph"></div>
+
+  <script>
+ fetch('datos/starwars-episode-1-interactions.json').then(res => res.json()).then(data => {
       const Graph = ForceGraph()
       (document.getElementById('graph'))
         .graphData(data)
@@ -18,5 +21,5 @@
       });
 
     });
-	
+</script>
 
