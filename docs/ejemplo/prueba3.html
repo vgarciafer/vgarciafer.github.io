@@ -19,7 +19,7 @@
         .nodeAutoColorBy('colour')
         .nodeCanvasObject((node, ctx, globalScale) => {
           const label = node.name;
-          const fontSize = (12/globalScale);
+          const fontSize = (12/globalScale)*state.nodeRelSize;
           ctx.font = `${fontSize}px Arial`;
           const textWidth = ctx.measureText(label).width;
           const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.2); 
