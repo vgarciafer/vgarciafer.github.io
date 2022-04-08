@@ -18,8 +18,7 @@ const div = d3.selectAll("div");
 
   <script>
 
- fetch('.datos/miserables.json').then(res => res.json()).then(
-    data => {
+ fetch('datos/miserables.json').then(res => res.json()).then(data => {
       const Graph = ForceGraph()
       (document.getElementById('graph'))
         .graphData(data)
