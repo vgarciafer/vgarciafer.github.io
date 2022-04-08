@@ -2,26 +2,33 @@
 <head>
   <style> 
 
-div{
-     font-size:20px;
+div.title{
+    font-size:20px;
    font-family:Arial;
    font-weight:bold;
-   font-style:italic;
-   line-height:30px;
-   letter-spacing:5px;
+   line-height:20px;
    text-decoration:underline;
    text-transform:capitalize;
    text-align:left;
    text-indent:30px;
-    } 
+    }  
+   div.subtitle{
+    font-size:16px;
+   font-family:Arial;
+   font-weight:bold;
+   line-height:20px;
+   text-decoration:underline;
+   text-transform:capitalize;
+   text-align:left;
+   text-indent:30px;
+    }
 	</style>
  <script src="https://unpkg.com/force-graph@1.42.9/dist/force-graph.min.js"></script>
 </head>
 
 <body>
-	<div> Star Wars Social Network </div>
-	<div> Episode 1 </div>
-	<div> Interactions</div>
+	<div id="title"> Star Wars Social Network-Episode 1</div>
+	<div id="subtitle"> Interactions</div>
 	<div> Number of scenes where the characters appeared together </div>
   <div id="graph"></div>
 
