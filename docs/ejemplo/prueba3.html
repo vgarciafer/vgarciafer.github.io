@@ -15,6 +15,7 @@
       (document.getElementById('graph'))
         .graphData(data)
         .nodeId('name')
+        .nodeVal('value')
         .nodeAutoColorBy('colour')
         .nodeCanvasObject((node, ctx, globalScale) => {
           const label = node.name;
