@@ -38,6 +38,14 @@
           const bckgDimensions = node.__bckgDimensions;
           bckgDimensions && ctx.fillRect(node.x - bckgDimensions[0] / 2, node.y - bckgDimensions[1] / 2, ...bckgDimensions);
         });
+      .onNodeDragEnd(node => {
+        	node.fx = node.x;
+        	node.fy = node.y;
+	      })
+	   .onNodeClick(node => {
+        Graph.centerAt(node.x, node.y, 1000);
+        Graph.zoom(8, 500);
+      });
     });
   </script>
 </body>
