@@ -1,25 +1,26 @@
 <head>
   <style> body { margin: 0; } </style>
 
-<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-<script src="js/force-graph.js"></script>
-
+  <script 
+ <script src="https://unpkg.com/force-graph@1.42.9/dist/force-graph.min.js"></script>
+  </script>
 </head>
 
 <body>
-  <div></div>
-   <script>
-    
-	   fetch('datos/miserables.json').then(res => res.json()).then( data => { 
-		 ForceGraph(data, {
-			  nodeId: d => d.id,
-			  nodeGroup: d => d.group,
-			  nodeTitle: d => `${d.id}\n${d.group}`,
-			  linkStrokeWidth: l => Math.sqrt(l.value),
-			  height: 600,
-			})  
-	     }); 
-   
+  <div id="graph"></div>
 
-   </script>
+  <script>
+ fetch('datos/starwars-episode1-interactions.json').then(res => res.json()).then(data => {
+      const Graph = ForceGraph()
+      (document.getElementById('graph'))
+        .graphData(data)
+        .nodeId('id')
+        .nodeVal('val')
+        .nodeLabel('id')
+        .nodeAutoColorBy('group')
+        .linkSource('source')
+        .linkTarget('target')
+    });
+	
+  </script>
 </body>
