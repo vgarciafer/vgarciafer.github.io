@@ -59,87 +59,38 @@ var width = 500,
       ,{ rcc:'18: Hip Disorders and Injuries', freq:55277}
       ,{ rcc:'19: Back Disorders and Injuries', freq:335735}
       ,{ rcc:'20: Other Musculoskeletal Conditions', freq:237768}
-      ,{ rcc:'28: Musculoskeletal Infection', freq:3126}
-      ,{ rcc:'29: Inflammatory Musculoskeletal Conditions', freq:27910}
-      ,{ rcc:'30: Lower Leg & Foot Disorders and Injuries', freq:189168}
-      ,{ rcc:'31: Shoulder & Upper Arm Disorders and Injuries', freq:115989}
-      ,{ rcc:'32: Forearm & Hand Disorders and Injuries', freq:129787}
-      ,{ rcc:'33: Hemorrhagic Conditions', freq:2355}
-      ,{ rcc:'34: Anemia', freq:77653}
-      ,{ rcc:'35: Disorders of Immunity', freq:3476}
-      ,{ rcc:'36: Cognitive Disorders', freq:27183}
-      ,{ rcc:'37: Drug Abuse', freq:24668}
-      ,{ rcc:'38: Alcohol Abuse', freq:24432}
-      ,{ rcc:'39: Tobacco Use', freq:85348}
-      ,{ rcc:'40: Personality Disorders', freq:4883}
-      ,{ rcc:'41: Other Mental Conditions', freq:114127}
-      ,{ rcc:'42: Psychoses', freq:9434}
-      ,{ rcc:'43: Eating Disorders', freq:3396}
-      ,{ rcc:'44: Mood and Anxiety Disorders', freq:192709}
-      ,{ rcc:'45: Suicide Attempts', freq:1178}
-      ,{ rcc:'46: Chromosomal and Developmental Disorders', freq:25802}
-      ,{ rcc:'47: Severe Developmental Disability', freq:62}
-      ,{ rcc:'48: Neurological Trauma', freq:16228}
-      ,{ rcc:'49: Paralysis and Coma', freq:2588}
-      ,{ rcc:'50: Seizure Disorders', freq:15261}
-      ,{ rcc:'52: Myoneural Conditions', freq:173}
-      ,{ rcc:'53: Other Neurological Conditions', freq:94753}
-      ,{ rcc:'54: Headache', freq:136205}
-      ,{ rcc:'55: Respiratory Arrest', freq:10383}
-      ,{ rcc:'56: Cardiac Arrest', freq:935}
-      ,{ rcc:'57: Cardiovascular Intervention and Complications', freq:3483}
-      ,{ rcc:'58: Coronary Artery Disease', freq:50439}
-      ,{ rcc:'59: Congestive Heart Failure', freq:22321}
-      ,{ rcc:'60: Heart Valve and Pericardial Conditions', freq:13816}
-      ,{ rcc:'61: Congenital Heart Conditions', freq:2117}
-      ,{ rcc:'62: Cardiac Arrhythmias', freq:53832}
-      ,{ rcc:'63: Other Heart Conditions', freq:3664}
-      ,{ rcc:'64: Hypertension', freq:257765}
-      ,{ rcc:'65: Stroke', freq:12426}
-      ,{ rcc:'66: Post-Stroke Paralysis', freq:8796}
-      ,{ rcc:'67: Sequelae of Cerebrovascular Events', freq:4578}
-      ,{ rcc:'68: Cerebro-Vascular Impairment', freq:3630}
-      ,{ rcc:'69: Peripheral Atherosclerosis', freq:6524}
-      ,{ rcc:'70: Other Peripheral-Vascular Conditions', freq:95355}
-      ,{ rcc:'71: Thrombosis/Phlebitis', freq:26999}
-      ,{ rcc:'72: Lung Intervention and Complications', freq:22}
-      ,{ rcc:'73: Lung Infection', freq:20633}
-      ,{ rcc:'74: Lung Congestion and Effusion', freq:3778}
-      ,{ rcc:'75: Lung Fibrosis', freq:7445}
-      ,{ rcc:'76: Other Lung Conditions', freq:44780}
-      ,{ rcc:'77: COPD and Asthma', freq:183802}
-      ,{ rcc:'78: Diabetic/Other Retinopathy', freq:31680}
-      ,{ rcc:'79: Blindness', freq:822}
-      ,{ rcc:'80: Eye Infection and Inflammation', freq:2027}
-      ,{ rcc:'81: Eye Intervention and Complications', freq:47374}
-      ,{ rcc:'82: Other Eye Conditions', freq:357819}
-      ,{ rcc:'83: Significant ENT Disorders', freq:5040}
-      ,{ rcc:'84: Hearing Impairment', freq:59120}
-      ,{ rcc:'85: Other ENT Disorders', freq:420787}
-      ,{ rcc:'86: Urinary System Intervention and Complications', freq:6232}
-      ,{ rcc:'88: Bladder and Other Urinary Conditions', freq:75154}
-      ,{ rcc:'89: Nephritis', freq:6534}
-      ,{ rcc:'90: Urinary System Infection', freq:53911}
-      ,{ rcc:'91: Female Genital Conditions', freq:239871}
-      ,{ rcc:'92: Male Genital Conditions', freq:97171}
-      ,{ rcc:'93: Completed/Terminated Pregnancy', freq:45184}
-      ,{ rcc:'94: Other Pregnancy', freq:649}
-      ,{ rcc:'95: Uncompleted Pregnancy', freq:20749}
-      ,{ rcc:'96: Severe Burns', freq:143}
-      ,{ rcc:'97: Skin Ulcers', freq:7847}
-      ,{ rcc:'98: Other Skin Conditions', freq:427180}
-      ,{ rcc:'99: Head Injury', freq:16136}
-      ,{ rcc:'100: Traumatic Amputation', freq:82}
-      ,{ rcc:'101: Other Injuries', freq:122934}
-      ,{ rcc:'102: Poisoning', freq:27032}
-      ,{ rcc:'103: Symptoms', freq:843464}
-      ,{ rcc:'109: Artificial Openings', freq:2438}
-      ,{ rcc:'110: Amputation Status', freq:2632}
-      ,{ rcc:'111: Other V-Codes', freq:2234}
-      ,{ rcc:'114: Other Screening and History', freq:1243320}
-      ,{ rcc:'115: Post-Procedural Conditions', freq:252101}
-      ,{ rcc:'116: Implant and Device Complications', freq:5750}
-      ,{ rcc:'117: Other Complications', freq:26597}
+      ,{ rcc:'21: Musculoskeletal Infection', freq:3126}
+      ,{ rcc:'22: Inflammatory Musculoskeletal Conditions', freq:27910}
+      ,{ rcc:'23: Lower Leg & Foot Disorders and Injuries', freq:189168}
+      ,{ rcc:'24: Shoulder & Upper Arm Disorders and Injuries', freq:115989}
+      ,{ rcc:'25: Forearm & Hand Disorders and Injuries', freq:129787}
+      ,{ rcc:'26: Hemorrhagic Conditions', freq:2355}
+      ,{ rcc:'27: Anemia', freq:77653}
+      ,{ rcc:'28: Disorders of Immunity', freq:3476}
+      ,{ rcc:'29: Cognitive Disorders', freq:27183}
+      ,{ rcc:'30: Drug Abuse', freq:24668}
+      ,{ rcc:'31: Alcohol Abuse', freq:24432}
+      ,{ rcc:'32: Tobacco Use', freq:85348}
+      ,{ rcc:'33: Personality Disorders', freq:4883}
+      ,{ rcc:'34: Other Mental Conditions', freq:114127}
+      ,{ rcc:'35: Psychoses', freq:9434}
+      ,{ rcc:'36: Eating Disorders', freq:3396}
+      ,{ rcc:'37: Mood and Anxiety Disorders', freq:192709}
+      ,{ rcc:'38: Suicide Attempts', freq:1178}
+      ,{ rcc:'39: Chromosomal and Developmental Disorders', freq:25802}
+      ,{ rcc:'40: Severe Developmental Disability', freq:62}
+      ,{ rcc:'41: Neurological Trauma', freq:16228}
+      ,{ rcc:'42: Paralysis and Coma', freq:2588}
+      ,{ rcc:'43: Seizure Disorders', freq:15261}
+      ,{ rcc:'44: Myoneural Conditions', freq:173}
+      ,{ rcc:'45: Other Neurological Conditions', freq:94753}
+      ,{ rcc:'46: Headache', freq:136205}
+      ,{ rcc:'47: Respiratory Arrest', freq:10383}
+      ,{ rcc:'48: Cardiac Arrest', freq:935}
+      ,{ rcc:'49: Cardiovascular Intervention and Complications', freq:3483}
+      ,{ rcc:'50: Coronary Artery Disease', freq:50439}
+
+
     ];
 
     var spiralLength = path.node().getTotalLength(),
