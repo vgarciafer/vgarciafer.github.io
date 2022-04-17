@@ -9,15 +9,15 @@
   <body>
 	<div id="chart"></div>
 	<script>
-        async function getData() {	
+        function getData() {	
 	    try {
-		let res = await fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL');
-		return await res.json();
+		let res = fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL');
+		return res.json();
 	    } catch (error) {
 		alert(error);
 	    }
      }
-     let rccdata = await getData();
+     let rccdata = getData();
  
 	  </script>
     <script type="text/javascript" src="main.js"></script>
