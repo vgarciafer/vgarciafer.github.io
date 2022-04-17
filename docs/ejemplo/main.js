@@ -1,4 +1,4 @@
-ar width = 500,
+var width = 500,
       height = 500,
       start = 0,
       end = 2.25,
