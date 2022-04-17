@@ -1,5 +1,14 @@
 
-  const config = {
+spirals = 3.7
+donutSlider = 25
+stateSelector = "TX"
+dataColumn = "new_case"
+barOrientation = "outside"
+colorSelector = "OrRd"
+axisTicks = "Yes"
+outline = "Yes"
+
+const config = {
     numSpirals: spirals,
     start: 0,
     end: spirals,
