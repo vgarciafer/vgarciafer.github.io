@@ -145,7 +145,7 @@ var width = 500,
     ];
 
     var spiralLength = path.node().getTotalLength(),
-        N = rccdata.length,
+        N = 365,
         barWidth = (spiralLength / N) - 1;
     var someData = [];
     for (var i = 0; i < N; i++) {
