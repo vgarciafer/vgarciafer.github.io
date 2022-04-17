@@ -8,20 +8,19 @@
   </head>
   <body>
 	<div id="chart"></div>
-	<script>
-        function getData() {	
-	    try {
+	<script type="module">
+        async function getData() {	
+	    
 		// fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL').then(res => res.json()).then(return res);
-	    } catch (error) {
-		alert(error);
-	    }
-     }
-	const url = 'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits';
-	const response = await fetch(url);
-	const commits = await response.json(); // read response body and parse as JSON
-
-	alert(commits[0].author.login);
-    	 let rccdata = getData();
+	 
+		const url = 'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits';
+		const response = await fetch(url);
+		const commits = await response.json(); // read response body and parse as JSON
+		alert(commits[0].author.login);
+      })
+		
+	
+    	 const rccdata =await getData();
  
 	  </script>
     <script type="text/javascript" src="main.js"></script>
