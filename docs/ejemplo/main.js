@@ -1,10 +1,3 @@
-alert(d3);
-chart = {
-  const parseTime = d3.isoParse();
-
-  data.map((d) => {
-    d.dt = d3.isoParse(d.submission_date);
-  });
 
   const config = {
     numSpirals: spirals,
