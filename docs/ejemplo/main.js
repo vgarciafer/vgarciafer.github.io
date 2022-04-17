@@ -1,3 +1,4 @@
+alert(d3);
 chart = {
   const parseTime = d3.isoParse();
 
