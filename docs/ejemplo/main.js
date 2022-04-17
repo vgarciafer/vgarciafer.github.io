@@ -143,33 +143,24 @@ var width = 500,
       ,{ rcc:'116: Implant and Device Complications', freq:5750}
       ,{ rcc:'117: Other Complications', freq:26597}
     ];
+
     var spiralLength = path.node().getTotalLength(),
         N = rccdata.length,
         barWidth = (spiralLength / N) - 1;
     var someData = [];
     for (var i = 0; i < N; i++) {
-      var currentDate = new Date();
-      currentDate.setDate(currentDate.getDate() + i);
       someData.push({
-        //date: currentDate,
-        //value: Math.random(),
-       // group: currentDate.getMonth()
         cat: rccdata[i].rcc,
         value: rccdata[i].freq
       });
     }
-   var ordinalScale = d3.scaleBand()
+
+    var ordinalScale = d3.scaleBand()
       //.domain(categories)
       .domain(rccdata.map(function(d){ return d.rcc; }))
       // This is the code to implement removing the above .domain(categories) statement
       .range([0, 1200000]);
 
-    var timeScale = d3.scaleTime()
-      .domain(d3.extent(someData, function(d){
-        return d.date;
-      }))
-      .range([0, spiralLength]);
-    
     // yScale for the bar height
     var yScale = d3.scaleLinear()
       .domain([0, d3.max(someData, function(d){
@@ -182,15 +173,15 @@ var width = 500,
       .enter()
       .append("rect")
       .attr("x", function(d,i){
-        
-        var linePer = ordinalScale(d.date),
+
+        var linePer = ordinalScale(d.cat),
             posOnLine = path.node().getPointAtLength(linePer),
             angleOnLine = path.node().getPointAtLength(linePer - barWidth);
-      
+
         d.linePer = linePer; // % distance are on the spiral
         d.x = posOnLine.x; // x postion on the spiral
         d.y = posOnLine.y; // y position on the spiral
-        
+
         d.a = (Math.atan2(angleOnLine.y, angleOnLine.x) * 180 / Math.PI) - 90; //angle at the spiral position
 
         return d.x;
@@ -209,7 +200,7 @@ var width = 500,
       .attr("transform", function(d){
         return "rotate(" + d.a + "," + d.x  + "," + d.y + ")"; // rotate the bar
       });
-    
+
     // add date labels
     var tF = d3.timeFormat("%b %Y"),
         firstInMonth = {};
@@ -223,16 +214,11 @@ var width = 500,
       .style("font", "10px arial")
       .append("textPath")
       // only add for the first of each month
-      .filter(function(d){
-        var sd = tF(d.date);
-        if (!firstInMonth[sd]){
-          firstInMonth[sd] = 1;
-          return true;
-        }
-        return false;
+      .filter(function(d,i){
+        return i % 10 === 0;
       })
       .text(function(d){
-        return tF(d.date);
+        return d.cat;
       })
       // place text along spiral
       .attr("xlink:href", "#spiral")
@@ -254,7 +240,7 @@ var width = 500,
     svg.selectAll("rect")
     .on('mouseover', function(d) {
 
-        tooltip.select('.date').html("Date: <b>" + d.date.toDateString() + "</b>");
+        tooltip.select('.date').html("Category: <b>" + d.cat + "</b>");
         tooltip.select('.value').html("Value: <b>" + Math.round(d.value*100)/100 + "<b>");
 
         d3.select(this)
@@ -272,7 +258,7 @@ var width = 500,
     })
     .on('mouseout', function(d) {
         d3.selectAll("rect")
-        .style("fill", function(d){return color(d.group);})
+        .style("fill", function(d){return color(d.cat);})
         .style("stroke", "none")
 
         tooltip.style('display', 'none');
