@@ -37,61 +37,7 @@ var width = 500,
       .style("fill", "none")
       .style("stroke", "steelblue");
 
-    var rccdata = [
-      { rcc:"1: Infections", freq:172313 }
-      ,{ rcc:'2: Diabetes Co-Morbidity Level', freq:149464}
-      ,{ rcc:'3: Type I Diabetes', freq:16864}
-      ,{ rcc:'4: Malnutrition', freq:8076}
-      ,{ rcc:'5: Hyperlipidemia and Lipidoses', freq:426949}
-      ,{ rcc:'6: Endocrine Conditions', freq:166509}
-      ,{ rcc:'7: Excess Weight', freq:218884}
-      ,{ rcc:'8: Other Nutritional and Metabolic Conditions', freq:45827}
-      ,{ rcc:'9: Liver Intervention and Complications', freq:296}
-      ,{ rcc:'10: Billary and Gallbladder Conditions', freq:9191}
-      ,{ rcc:'11: Hepatitis', freq:35605}
-      ,{ rcc:'12: Gastrointestinal Intervention and Complications', freq:110}
-      ,{ rcc:'13: Peptic Ulcer and Related Conditions', freq:6247}
-      ,{ rcc:'14: Other Gastrointestinal Conditions', freq:384987}
-      ,{ rcc:'15: Pancreatic Disorders', freq:8396}
-      ,{ rcc:'16: Inflammatory Bowel Disease', freq:9227}
-      ,{ rcc:'17: Knee Disorders and Injuries', freq:113964}
-      ,{ rcc:'18: Hip Disorders and Injuries', freq:55277}
-      ,{ rcc:'19: Back Disorders and Injuries', freq:335735}
-      ,{ rcc:'20: Other Musculoskeletal Conditions', freq:237768}
-      ,{ rcc:'21: Musculoskeletal Infection', freq:3126}
-      ,{ rcc:'22: Inflammatory Musculoskeletal Conditions', freq:27910}
-      ,{ rcc:'23: Lower Leg & Foot Disorders and Injuries', freq:189168}
-      ,{ rcc:'24: Shoulder & Upper Arm Disorders and Injuries', freq:115989}
-      ,{ rcc:'25: Forearm & Hand Disorders and Injuries', freq:129787}
-      ,{ rcc:'26: Hemorrhagic Conditions', freq:2355}
-      ,{ rcc:'27: Anemia', freq:77653}
-      ,{ rcc:'28: Disorders of Immunity', freq:3476}
-      ,{ rcc:'29: Cognitive Disorders', freq:27183}
-      ,{ rcc:'30: Drug Abuse', freq:24668}
-      ,{ rcc:'31: Alcohol Abuse', freq:24432}
-      ,{ rcc:'32: Tobacco Use', freq:85348}
-      ,{ rcc:'33: Personality Disorders', freq:4883}
-      ,{ rcc:'34: Other Mental Conditions', freq:114127}
-      ,{ rcc:'35: Psychoses', freq:9434}
-      ,{ rcc:'36: Eating Disorders', freq:3396}
-      ,{ rcc:'37: Mood and Anxiety Disorders', freq:192709}
-      ,{ rcc:'38: Suicide Attempts', freq:1178}
-      ,{ rcc:'39: Chromosomal and Developmental Disorders', freq:25802}
-      ,{ rcc:'40: Severe Developmental Disability', freq:62}
-      ,{ rcc:'41: Neurological Trauma', freq:16228}
-      ,{ rcc:'42: Paralysis and Coma', freq:2588}
-      ,{ rcc:'43: Seizure Disorders', freq:15261}
-      ,{ rcc:'44: Myoneural Conditions', freq:173}
-      ,{ rcc:'45: Other Neurological Conditions', freq:94753}
-      ,{ rcc:'46: Headache', freq:136205}
-      ,{ rcc:'47: Respiratory Arrest', freq:10383}
-      ,{ rcc:'48: Cardiac Arrest', freq:935}
-      ,{ rcc:'49: Cardiovascular Intervention and Complications', freq:3483}
-      ,{ rcc:'50: Coronary Artery Disease', freq:50439}
-
-
-    ];
-
+   
     var spiralLength = path.node().getTotalLength(),
         N = rccdata.length,
         barWidth = (spiralLength / N) - 1;
@@ -101,8 +47,7 @@ var width = 500,
       currentDate.setDate(currentDate.getDate() + i);
       someData.push({
         date: currentDate,
-        cat: rccdata[i].rcc,
-        value: rccdata[i].freq
+        value: rccdata[i].tot_cases
       });
     }
    var timeScale = d3.scaleTime()
@@ -201,7 +146,7 @@ var width = 500,
     svg.selectAll("rect")
     .on('mouseover', function(d) {
 
-        tooltip.select('.date').html("Category: <b>" + d.cat + "</b>");
+       // tooltip.select('.date').html("Category: <b>" + d.cat + "</b>");
         tooltip.select('.value').html("Value: <b>" + Math.round(d.value*100)/100 + "<b>");
 
         d3.select(this)
