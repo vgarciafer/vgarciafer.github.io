@@ -7,6 +7,7 @@ barOrientation = "outside"
 colorSelector = "OrRd"
 axisTicks = "Yes"
 outline = "Yes"
+width = "680"
 
 const config = {
     numSpirals: spirals,
