@@ -2,8 +2,7 @@ var width = 500,
       height = 500,
       start = 0,
       end = 2.25,
-      numSpirals = 1
-      margin = {top:50,bottom:50,left:50,right:50};
+      numSpirals = 1;
 
     var theta = function(r) {
       return numSpirals * Math.PI * r;
