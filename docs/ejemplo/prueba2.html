@@ -13,6 +13,7 @@
 	    try {
 		let res = fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL');
 		return res.json();
+		 fetch('datos/starwars-episode-1-interactions.json').then(res => res.json()).then(return res)
 	    } catch (error) {
 		alert(error);
 	    }
