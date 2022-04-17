@@ -102,6 +102,7 @@ var width = 500,
       currentDate.setDate(currentDate.getDate() + i);
       someData.push({
         date: currentDate,
+        cat: rccdata[i].rcc,
         value: rccdata[i].freq
       });
     }
