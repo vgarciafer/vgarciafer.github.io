@@ -40,25 +40,25 @@ var width = 500,
 
     var rccdata = [
       { rcc:"1: Infections", freq:172313 }
-      ,{ rcc:'7: Diabetes Co-Morbidity Level', freq:149464}
-      ,{ rcc:'8: Type I Diabetes', freq:16864}
-      ,{ rcc:'9: Malnutrition', freq:8076}
-      ,{ rcc:'10: Hyperlipidemia and Lipidoses', freq:426949}
-      ,{ rcc:'11: Endocrine Conditions', freq:166509}
-      ,{ rcc:'12: Excess Weight', freq:218884}
-      ,{ rcc:'13: Other Nutritional and Metabolic Conditions', freq:45827}
-      ,{ rcc:'14: Liver Intervention and Complications', freq:296}
-      ,{ rcc:'16: Billary and Gallbladder Conditions', freq:9191}
-      ,{ rcc:'17: Hepatitis', freq:35605}
-      ,{ rcc:'19: Gastrointestinal Intervention and Complications', freq:110}
-      ,{ rcc:'20: Peptic Ulcer and Related Conditions', freq:6247}
-      ,{ rcc:'21: Other Gastrointestinal Conditions', freq:384987}
-      ,{ rcc:'22: Pancreatic Disorders', freq:8396}
-      ,{ rcc:'23: Inflammatory Bowel Disease', freq:9227}
-      ,{ rcc:'24: Knee Disorders and Injuries', freq:113964}
-      ,{ rcc:'25: Hip Disorders and Injuries', freq:55277}
-      ,{ rcc:'26: Back Disorders and Injuries', freq:335735}
-      ,{ rcc:'27: Other Musculoskeletal Conditions', freq:237768}
+      ,{ rcc:'2: Diabetes Co-Morbidity Level', freq:149464}
+      ,{ rcc:'3: Type I Diabetes', freq:16864}
+      ,{ rcc:'4: Malnutrition', freq:8076}
+      ,{ rcc:'5: Hyperlipidemia and Lipidoses', freq:426949}
+      ,{ rcc:'6: Endocrine Conditions', freq:166509}
+      ,{ rcc:'7: Excess Weight', freq:218884}
+      ,{ rcc:'8: Other Nutritional and Metabolic Conditions', freq:45827}
+      ,{ rcc:'9: Liver Intervention and Complications', freq:296}
+      ,{ rcc:'10: Billary and Gallbladder Conditions', freq:9191}
+      ,{ rcc:'11: Hepatitis', freq:35605}
+      ,{ rcc:'12: Gastrointestinal Intervention and Complications', freq:110}
+      ,{ rcc:'13: Peptic Ulcer and Related Conditions', freq:6247}
+      ,{ rcc:'14: Other Gastrointestinal Conditions', freq:384987}
+      ,{ rcc:'15: Pancreatic Disorders', freq:8396}
+      ,{ rcc:'16: Inflammatory Bowel Disease', freq:9227}
+      ,{ rcc:'17: Knee Disorders and Injuries', freq:113964}
+      ,{ rcc:'18: Hip Disorders and Injuries', freq:55277}
+      ,{ rcc:'19: Back Disorders and Injuries', freq:335735}
+      ,{ rcc:'20: Other Musculoskeletal Conditions', freq:237768}
       ,{ rcc:'28: Musculoskeletal Infection', freq:3126}
       ,{ rcc:'29: Inflammatory Musculoskeletal Conditions', freq:27910}
       ,{ rcc:'30: Lower Leg & Foot Disorders and Injuries', freq:189168}
