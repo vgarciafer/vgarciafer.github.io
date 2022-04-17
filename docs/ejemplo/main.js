@@ -171,11 +171,16 @@ var width = 500,
       .style("font", "10px arial")
       .append("textPath")
       // only add for the first of each month
-      .filter(function(d,i){
-        return i % 10 === 0;
+      .filter(function(d){
+        var sd = tF(d.date);
+        if (!firstInMonth[sd]){
+          firstInMonth[sd] = 1;
+          return true;
+        }
+        return false;
       })
       .text(function(d){
-        return d.cat;
+        return tF(d.date);
       })
       // place text along spiral
       .attr("xlink:href", "#spiral")
