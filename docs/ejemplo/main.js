@@ -262,5 +262,5 @@
     .attr("x", 0)
     .attr("y", height - 18);
 
-  return svg.node();
+ 
 }
