@@ -98,12 +98,19 @@ var width = 500,
         barWidth = (spiralLength / N) - 1;
     var someData = [];
     for (var i = 0; i < N; i++) {
+      var currentDate = new Date();
+      currentDate.setDate(currentDate.getDate() + i);
       someData.push({
-        cat: rccdata[i].rcc,
+        date: currentDate,
         value: rccdata[i].freq
       });
     }
-
+   var timeScale = d3.scaleTime()
+      .domain(d3.extent(someData, function(d){
+        return d.date;
+      }))
+      .range([0, spiralLength]);
+    
     var ordinalScale = d3.scaleBand()
       //.domain(categories)
       .domain(rccdata.map(function(d){ return d.rcc; }))
@@ -123,7 +130,7 @@ var width = 500,
       .append("rect")
       .attr("x", function(d,i){
 
-        var linePer = ordinalScale(d.cat),
+        var linePer = timeScale(d.date),
             posOnLine = path.node().getPointAtLength(linePer),
             angleOnLine = path.node().getPointAtLength(linePer - barWidth);
 
