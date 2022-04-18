@@ -6,7 +6,9 @@ function procesaEspiral(json){
     var rccdata = [];
     for(let i = 0; i < json.length; i++){ 
       rccdata.push([i,json[i]]);  
-      alert(Date.parse(rccdata[i].submission_date))
+      console.log(rccdata[i])
+      console.log(rccdata[i].submission_date)
+      console.log(Date.parse(rccdata[i].submission_date))
     }
     
     var width = 500,
