@@ -8,7 +8,7 @@ function processJSON(json){
   }
 }
 fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL')
-  .then(getResponse)
+  .then(response => response.json())
   .then(processJSON);
 
 var width = 500,
