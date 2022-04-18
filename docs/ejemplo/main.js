@@ -167,7 +167,7 @@ function procesaEspiral(json){
       })
       .on('mouseout', function(d) {
           d3.selectAll("rect")
-          .style("fill", function(d){return color(d.date);})
+          .style("fill", function(d){return color(d.date.getMonth());})
           .style("stroke", "none")
 
           tooltip.style('display', 'none');
