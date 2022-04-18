@@ -37,7 +37,8 @@ var width = 500,
       .style("fill", "none")
       .style("stroke", "steelblue");
 
-   
+    let rccdata =await getData();
+
     var spiralLength = path.node().getTotalLength(),
         N = rccdata.length,
         barWidth = (spiralLength / N) - 1;
