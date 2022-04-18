@@ -15,7 +15,7 @@ function procesaEspiral(json){
       height = 550,
       start = 0,
       end = 2.25,
-      numSpirals = 5;
+      numSpirals = 10;
 
     var theta = function(r) {
       return numSpirals * Math.PI * r;
@@ -150,7 +150,7 @@ function procesaEspiral(json){
       svg.selectAll("rect")
       .on('mouseover', function(d) {
 
-          tooltip.select('.value').html("New York: <br>" + formatDate(d.date) + " <br> Total Deaths: <b>" + Math.round(d.value*100)/100 + "<b>");
+          tooltip.select('.value').html("New York: <br>" + d.date.getMonth() + " <br> Total Deaths: <b>" + Math.round(d.value*100)/100 + "<b>");
 
           d3.select(this)
           .style("fill","#FFFFFF")
