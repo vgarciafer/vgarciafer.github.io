@@ -169,7 +169,6 @@ function procesaEspiral(json){
 
       })
      .on('click', function(d) {
-         alert("click");
           tooltip.select('.value').html(formatDate(d.date) +" <br> Nuevos fallecidos:" + Math.round(d.value*100)/100 +"<br> Fallecidos totales: <b>" + Math.round(d.total*100)/100 + "<b>");
 
           d3.select(this)
