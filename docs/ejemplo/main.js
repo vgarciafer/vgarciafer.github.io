@@ -4,13 +4,17 @@ fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=NY')
 
 
 const formatDate = (date) => {
-  const [dateStr] = new Date(date).toISOString().split("T")
-  return dateStr
+  const [dateStr] = new Date(date).toISOString().split("T");
+  return dateStr;
 }
 const formatDateMonth = (date) => {
-  const now = new Date(date);
-  const [monthStr] = now.getMonth()
-  return monthStr
+  try{ 
+    const now = new Date(date);
+    const [monthStr] = now.getMonth();
+     return monthStr;
+  }catch (error) {
+   console.error(error);
+  }
 }
 function procesaEspiral(json){
     var rccdata = [];
