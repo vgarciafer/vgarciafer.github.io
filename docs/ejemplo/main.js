@@ -49,6 +49,7 @@ var width = 500,
       .style("fill", "none")
       .style("stroke", "steelblue");
 
+    alert(rccdata.length);
     var spiralLength = path.node().getTotalLength(),
         N = rccdata.length,
         barWidth = (spiralLength / N) - 1;
