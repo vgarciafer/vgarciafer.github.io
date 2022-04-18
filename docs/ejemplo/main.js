@@ -158,7 +158,7 @@ function procesaEspiral(json){
 
       svg.selectAll("rect")
       .on('mouseover', function(d) {
-        tooltip.select('.value').html(formatDate(d.date) +" <br> Nuevos fallecidos:" + d.value +"<br> Fallecidos totales: <b>" + Math.round(d.total*100)/100 + "<b>");
+        tooltip.select('.value').html(formatDate(d.date) +" <br> Nuevos fallecidos:" + Math.round(d.value*100)/100 +"<br> Fallecidos totales: <b>" + Math.round(d.total*100)/100 + "<b>");
           d3.select(this)
           .style("fill","#FFFFFF")
           .style("stroke","#000000")
@@ -170,7 +170,7 @@ function procesaEspiral(json){
       })
      .on('click', function(d) {
 
-          tooltip.select('.value').html(formatDate(d.date) +" <br> Nuevos fallecidos:" + d.value +"<br> Fallecidos totales: <b>" + Math.round(d.total*100)/100 + "<b>");
+          tooltip.select('.value').html(formatDate(d.date) +" <br> Nuevos fallecidos:" + Math.round(d.value*100)/100 +"<br> Fallecidos totales: <b>" + Math.round(d.total*100)/100 + "<b>");
 
           d3.select(this)
           .style("fill","#FFFFFF")
