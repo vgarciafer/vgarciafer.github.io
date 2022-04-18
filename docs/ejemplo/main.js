@@ -9,9 +9,7 @@ const formatDate = (date) => {
 }
 const formatDateMonth = (date) => {
   try{ 
-    const now = new Date(date);
-    const [monthStr] = new Date(date).toISOString().slice(5,7);
-     return monthStr;
+    return new Date(date).toISOString().slice(5,7);
   }catch (error) {
    console.error(error);
   }
@@ -161,7 +159,7 @@ function procesaEspiral(json){
       svg.selectAll("rect")
       .on('mouseover', function(d) {
 
-          tooltip.select('.value').html(formatDate(d.date) + " <br>" + formatDateMonth(d.date) +" <br> Nuevos fallecidos <br> " + d.parcial +"<br> Fallecidos totales: <b>" + Math.round(d.value*100)/100 + "<b>");
+          tooltip.select('.value').html(formatDate(d.date) + " <br>" + formatDateMonth(d.date) +" <br> Nuevos fallecidos: " + d.parcial +"<br> Fallecidos totales: <b>" + Math.round(d.value*100)/100 + "<b>");
 
           d3.select(this)
           .style("fill","#FFFFFF")
@@ -174,7 +172,7 @@ function procesaEspiral(json){
       })
      .on('click', function(d) {
 
-          tooltip.select('.value').html(formatDate(d.date) + " <br>" + formatDateMonth(d.date) +" <br> Nuevos fallecidos <br> " + d.parcial +"<br> Fallecidos totales: <b>" + Math.round(d.value*100)/100 + "<b>");
+          tooltip.select('.value').html(formatDate(d.date) + " <br>" + formatDateMonth(d.date) +" <br> Nuevos fallecidos:" + d.parcial +"<br> Fallecidos totales: <b>" + Math.round(d.value*100)/100 + "<b>");
 
           d3.select(this)
           .style("fill","#FFFFFF")
