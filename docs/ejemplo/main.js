@@ -7,13 +7,9 @@ function procesaEspiral(json){
     var rccdata2 = [];
     for(let i = 0; i < json.length; i++){ 
       rccdata.push([i,json[i]]);  
-      rccdata2.push([json[i]]);  
-     var objeto = json[i];
-      var objeto1 =rccdata[i][1];
-      var objeto2 =rccdata[i];
-      //console.log(objeto["submission_date"]);
-      console.log(objeto1["submission_date"]);
-      console.log(objeto2["submission_date"]);
+      var objeto =rccdata[i][1];
+      console.log(objeto["submission_date"]);
+      
     }
     
     var width = 500,
@@ -62,8 +58,8 @@ function procesaEspiral(json){
       var someData = [];
       for (var i = 0; i < N; i++) {
         someData.push({
-          date: Date.parse(rccdata[i].submission_date),
-          value: rccdata[i].tot_cases
+          date: Date.parse(rccdata[i][1]["submission_date"]),
+          value: rccdata[i][1]["tot_cases"]
         });
       }
      var timeScale = d3.scaleTime()
