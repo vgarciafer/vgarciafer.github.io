@@ -9,7 +9,7 @@ function procesaEspiral(json){
      var objeto = json[i];
       var objeto1 =rccdata[i];
       //console.log(objeto["submission_date"]);
-      console.log(objeto1["submission_date"]);
+      console.log(objeto1[i]);
     }
     
     var width = 500,
