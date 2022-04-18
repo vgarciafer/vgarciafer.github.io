@@ -7,6 +7,11 @@ const formatDate = (date) => {
   const [dateStr] = new Date(date).toISOString().split('T')
   return dateStr
 }
+const formatDateMonth = (date) => {
+  const [dateStr] = new Date(date).toISOString().split('T')
+  dateStr.date.toLocaleString("es-ES", { month: "short" })
+  return dateStr
+}
 function procesaEspiral(json){
     var rccdata = [];
     for(let i = 0; i < json.length; i++){ 
@@ -151,7 +156,7 @@ function procesaEspiral(json){
       svg.selectAll("rect")
       .on('mouseover', function(d) {
 
-          tooltip.select('.value').html("New York: <br>" + d.date.toLocaleString("es-ES", { month: "short" }) + " <br> Fallecidos totales: <b>" + Math.round(d.value*100)/100 + "<b>");
+          tooltip.select('.value').html("New York: <br>" + formatDate(d.date) + " <br> Fallecidos totales: <b>" + Math.round(d.value*100)/100 + "<b>");
 
           d3.select(this)
           .style("fill","#FFFFFF")
@@ -168,7 +173,7 @@ function procesaEspiral(json){
       })
       .on('mouseout', function(d) {
           d3.selectAll("rect")
-          .style("fill", function(d){return color(d.date.toLocaleString("es-ES", { month: "short" }))})
+          .style("fill", function(d){return color(formatDateMonth(d.date))})
           .style("stroke", "none")
 
           tooltip.style('display', 'none');
