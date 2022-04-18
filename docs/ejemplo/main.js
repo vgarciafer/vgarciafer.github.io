@@ -7,16 +7,13 @@ function procesaEspiral(json){
     var rccdata2 = [];
     for(let i = 0; i < json.length; i++){ 
       rccdata.push([i,json[i]]);  
-      var objeto =rccdata[i][1];
-      console.log(objeto["submission_date"]);
-      
     }
     
     var width = 500,
       height = 500,
       start = 0,
       end = 2.25,
-      numSpirals = 3;
+      numSpirals = 4;
 
     var theta = function(r) {
       return numSpirals * Math.PI * r;
@@ -159,7 +156,7 @@ function procesaEspiral(json){
       .on('mouseover', function(d) {
 
          // tooltip.select('.date').html("Category: <b>" + d.cat + "</b>");
-          tooltip.select('.value').html("Value: <b>" + Math.round(d.value*100)/100 + "<b>");
+          tooltip.select('.value').html("Total Deaths: <b>" + Math.round(d.value*100)/100 + "<b>");
 
           d3.select(this)
           .style("fill","#FFFFFF")
