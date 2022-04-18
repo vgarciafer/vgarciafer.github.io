@@ -4,12 +4,16 @@ fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL')
 
 function procesaEspiral(json){
     var rccdata = [];
+    var rccdata2 = [];
     for(let i = 0; i < json.length; i++){ 
       rccdata.push([i,json[i]]);  
+      rccdata2.push([json[i]]);  
      var objeto = json[i];
       var objeto1 =rccdata[i][1];
+      var objeto2 =rccdata[i];
       //console.log(objeto["submission_date"]);
       console.log(objeto1["submission_date"]);
+      console.log(objeto2["submission_date"]);
     }
     
     var width = 500,
