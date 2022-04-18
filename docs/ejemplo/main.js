@@ -11,7 +11,6 @@ const formatDateMonth = (date) => {
   try{ 
     const now = new Date(date);
     const [monthStr] = new Date(date).toISOString().slice(5,7);
-      alert(new Date(date).toISOString().slice(5,7));
      return monthStr;
   }catch (error) {
    console.error(error);
