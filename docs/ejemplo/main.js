@@ -11,12 +11,11 @@ function procesaEspiral(json){
     for(let i = 0; i < json.length; i++){ 
       rccdata.push([i,json[i]]);  
     }
-    
     var width = 600,
       height = 600,
       start = 0,
       end = 2.25,
-      numSpirals = 6;
+      numSpirals = 8;
 
     var theta = function(r) {
       return numSpirals * Math.PI * r;
@@ -151,7 +150,7 @@ function procesaEspiral(json){
       svg.selectAll("rect")
       .on('mouseover', function(d) {
 
-          tooltip.select('.value').html("New York: <br>" + formatDate(d.date) + " Total Deaths: <b>" + Math.round(d.value*100)/100 + "<b>");
+          tooltip.select('.value').html("New York: <br>" + formatDate(d.date) + " <br> Total Deaths: <b>" + Math.round(d.value*100)/100 + "<b>");
 
           d3.select(this)
           .style("fill","#FFFFFF")
