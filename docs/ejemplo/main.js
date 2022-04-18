@@ -1,6 +1,6 @@
 //Basado en: https://gist.github.com/arpitnarechania/027e163073864ef2ac4ceb5c2c0bf616 
 //license MIT
-fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=NY')
+fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=NY&&$order=submission_date')
   .then(response => response.json())
   .then(procesaEspiral);
 
@@ -16,11 +16,13 @@ const formatDateMonth = (date) => {
    console.error(error);
   }
 }
+
 function procesaEspiral(json){
     var rccdata = [];
     for(let i = 0; i < json.length; i++){ 
       rccdata.push([i,json[i]]);  
     }
+
     var width = 550,
       height = 550,
       start = 0,
