@@ -1,0 +1,63 @@
+<html>
+<head>
+  <style> 
+
+div.title{
+    font-size:24px;
+   font-family:Arial;
+   font-weight:bold;
+   line-height:20px;
+   text-align:center;
+   text-indent:30px;
+    }  
+   div.subtitle{
+    font-size:16px;
+   font-family:Arial;
+   line-height:20px;
+   text-align:center;
+   text-indent:30px;
+    }
+div.normal{
+    font-size:14px;
+   font-family:Arial;
+   line-height:20px;
+   text-align:center;
+   text-indent:30px;
+    }  
+	</style>
+ <script src="https://unpkg.com/force-graph@1.42.9/dist/force-graph.min.js"></script>
+</head>
+
+<body>
+	<br>
+	<div class="title"> Star Wars Social Network-Episode 1 </div>
+	<div  class="subtitle">Interactions: number of scenes where the characters appeared together </div>
+
+  <div id="graph"></div>
+
+  <script>
+ fetch('datos/starwars-episode-1-interactions.json').then(res => res.json()).then(data => {
+      const Graph = ForceGraph()
+      (document.getElementById('graph'))
+        .graphData(data)
+        .nodeId('name')
+        .nodeVal('value')
+        .nodeLabel('name')
+        .nodeAutoColorBy('colour')
+       .linkSource('source')
+        .linkTarget('target')
+       .onNodeDragEnd(node => {
+        	node.fx = node.x;
+        	node.fy = node.y;
+	      })
+	.onNodeClick(node => {
+        Graph.centerAt(node.x, node.y, 1000);
+        Graph.zoom(8, 500);
+      });
+
+    });
+	
+  </script>
+		<div class="normal">Origen de datos: https://www.kaggle.com/datasets/ruchi798/star-wars</div>
+</body>
+</html>
