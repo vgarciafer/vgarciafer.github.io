@@ -64,13 +64,6 @@ function procesaEspiral(json){
         }))
         .range([0, spiralLength]);
 
-      var ordinalScale = d3.scaleBand()
-        //.domain(categories)
-        .domain(rccdata.map(function(d){ return d.rcc; }))
-        // This is the code to implement removing the above .domain(categories) statement
-        .range([0, 1200000]);
-
-      // yScale for the bar height
       var yScale = d3.scaleLinear()
         .domain([0, d3.max(someData, function(d){
           return d.value;
@@ -154,8 +147,7 @@ function procesaEspiral(json){
       svg.selectAll("rect")
       .on('mouseover', function(d) {
 
-         // tooltip.select('.date').html("Category: <b>" + d.cat + "</b>");
-          tooltip.select('.value').html("New York: " + d.date + "Total Deaths: <b>" + Math.round(d.value*100)/100 + "<b>");
+          tooltip.select('.value').html("New York: " + timeScale(d.date) + " Total Deaths: <b>" + Math.round(d.value*100)/100 + "<b>");
 
           d3.select(this)
           .style("fill","#FFFFFF")
