@@ -8,8 +8,7 @@ const formatDate = (date) => {
   return dateStr
 }
 const formatDateMonth = (date) => {
-  const [dateStr] = new Date(date)
-  dateStr.getMonth()
+  const [dateStr] = new Date(date).getMonth()
   return dateStr
 }
 function procesaEspiral(json){
