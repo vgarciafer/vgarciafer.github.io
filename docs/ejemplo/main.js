@@ -10,7 +10,7 @@ const formatDate = (date) => {
 const formatDateMonth = (date) => {
   const now = new Date(date);
   const [monthStr] = ((now.getMonth() + 1) < 10 ? '0' : '') + (now.getMonth() + 1);
-  alert(monthStr + now.getMonth())
+  alert(monthStr + "-" + now.getMonth())
   return monthStr
 }
 function procesaEspiral(json){
