@@ -10,7 +10,7 @@ const formatDate = (date) => {
 const formatDateMonth = (date) => {
   try{ 
     const now = new Date(date);
-    const [monthStr] = now.getMonth();
+    const [monthStr] = new Date(date).toISOString().slice(5,7);
      return monthStr;
   }catch (error) {
    console.error(error);
