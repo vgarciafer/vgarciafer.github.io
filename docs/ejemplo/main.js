@@ -4,7 +4,10 @@ fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL')
 
 function procesaEspiral(json){
     var rccdata = [];
-    for(let i = 0; i < json.length; i++){ rccdata.push([i,json[i]]);   }
+    for(let i = 0; i < json.length; i++){ 
+      rccdata.push([i,json[i]]);  
+      alert(Date.parse(rccdata[i].submission_date))
+    }
     
     var width = 500,
       height = 500,
