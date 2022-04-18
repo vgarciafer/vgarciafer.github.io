@@ -46,8 +46,10 @@ div.chart {
   margin-right: auto;
 }
 div.title {
-  margin: auto;
-  width: 50%;
-  border: 3px solid green;
-  padding: 10px;
+  font-size:24px;
+   font-family:Arial;
+   font-weight:bold;
+   line-height:20px;
+   text-align:center;
+   text-indent:30px;
 }
