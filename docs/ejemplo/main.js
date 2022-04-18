@@ -66,8 +66,8 @@ function procesaEspiral(json){
       for (var i = 0; i < N; i++) {
         someData.push({
           date: Date.parse(rccdata[i][1]["submission_date"]),
-          value: rccdata[i][1]["tot_death"],
-          parcial: rccdata[i][1]["new_death"]
+          value: rccdata[i][1]["new_death"],
+          total: rccdata[i][1]["tot_death"]
         });
       }
      var timeScale = d3.scaleTime()
@@ -158,9 +158,7 @@ function procesaEspiral(json){
 
       svg.selectAll("rect")
       .on('mouseover', function(d) {
-
-          tooltip.select('.value').html(formatDate(d.date) + " <br>" + formatDateMonth(d.date) +" <br> Nuevos fallecidos: " + d.parcial +"<br> Fallecidos totales: <b>" + Math.round(d.value*100)/100 + "<b>");
-
+        tooltip.select('.value').html(formatDate(d.date) +" <br> Nuevos fallecidos:" + d.value +"<br> Fallecidos totales: <b>" + Math.round(d.total*100)/100 + "<b>");
           d3.select(this)
           .style("fill","#FFFFFF")
           .style("stroke","#000000")
@@ -172,7 +170,7 @@ function procesaEspiral(json){
       })
      .on('click', function(d) {
 
-          tooltip.select('.value').html(formatDate(d.date) + " <br>" + formatDateMonth(d.date) +" <br> Nuevos fallecidos:" + d.parcial +"<br> Fallecidos totales: <b>" + Math.round(d.value*100)/100 + "<b>");
+          tooltip.select('.value').html(formatDate(d.date) +" <br> Nuevos fallecidos:" + d.value +"<br> Fallecidos totales: <b>" + Math.round(d.total*100)/100 + "<b>");
 
           d3.select(this)
           .style("fill","#FFFFFF")
