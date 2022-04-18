@@ -2,6 +2,7 @@ fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=NY')
   .then(response => response.json())
   .then(procesaEspiral);
 
+
 const formatDate = (date) => {
   const [dateStr] = new Date(date).toISOString().split('T')
   return dateStr
@@ -150,7 +151,7 @@ function procesaEspiral(json){
       svg.selectAll("rect")
       .on('mouseover', function(d) {
 
-          tooltip.select('.value').html("New York: <br>" + d.date.getMonth() + " <br> Fallecidos totales: <b>" + Math.round(d.value*100)/100 + "<b>");
+          tooltip.select('.value').html("New York: <br>" + d.date.toLocaleString("es-ES", { month: "short" }) + " <br> Fallecidos totales: <b>" + Math.round(d.value*100)/100 + "<b>");
 
           d3.select(this)
           .style("fill","#FFFFFF")
