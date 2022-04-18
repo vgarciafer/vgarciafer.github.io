@@ -1,9 +1,14 @@
-var rccdata;
-data = d3.json("https://data.cdc.gov/resource/9mfq-cb36.json?state=AL")
-fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL')
+var rccdata = [];
+
+function getData(){
+    fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL')
       .then(res => res.json())
-      .then(data => rccdata= data) 
-      .then(() => console.log(rccdata))
+      .then(data => return data) 
+      .catch(error => console.log(error))
+  }
+  
+ rccdata = getData();
+
 var width = 500,
       height = 500,
       start = 0,
