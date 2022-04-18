@@ -38,13 +38,11 @@
     display: block;
     opacity: 0;
 }
-.chart {
+.graph {
   display:flex;
   align-items:center;
   justify-content:center;
   position: relative;
-  border-radius: 50%;
-  border: 20px solid brown;
 }
 
 div.title{
