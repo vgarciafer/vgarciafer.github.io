@@ -2,9 +2,9 @@ var rccdata = [];
 
 function processJSON(json){
   for(let i = 0; i < json.length; i++){
-    rccdata.push([i,json[i]]);  
-    console.log(json.length);
+    rccdata.push([i,json[i]]);   
   }
+  console.log(rccdata.length);
 }
 fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL')
   .then(response => response.json())
