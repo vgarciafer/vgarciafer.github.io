@@ -40,3 +40,14 @@
     display: block;
     opacity: 0;
 }
+div.chart {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.title {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
