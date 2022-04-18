@@ -8,7 +8,7 @@ const formatDate = (date) => {
   return dateStr
 }
 const formatDateMonth = (date) => {
-  const [dateStr] = new Date(date).getMonth()
+  const [dateStr] = new Date(date).toLocaleDateString('es-ES', { month: '2-digit'})
   return dateStr
 }
 function procesaEspiral(json){
