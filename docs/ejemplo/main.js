@@ -1,3 +1,4 @@
+import rccdata from  from 'data.js';
 var width = 500,
       height = 500,
       start = 0,
