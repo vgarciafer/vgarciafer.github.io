@@ -155,7 +155,7 @@ function procesaEspiral(json){
       .on('mouseover', function(d) {
 
          // tooltip.select('.date').html("Category: <b>" + d.cat + "</b>");
-          tooltip.select('.value').html("New York: " + d.Date + "Total Deaths: <b>" + Math.round(d.value*100)/100 + "<b>");
+          tooltip.select('.value').html("New York: " + d.date + "Total Deaths: <b>" + Math.round(d.value*100)/100 + "<b>");
 
           d3.select(this)
           .style("fill","#FFFFFF")
@@ -172,7 +172,7 @@ function procesaEspiral(json){
       })
       .on('mouseout', function(d) {
           d3.selectAll("rect")
-          .style("fill", function(d){return color(d.cat);})
+          .style("fill", function(d){return color(d.date);})
           .style("stroke", "none")
 
           tooltip.style('display', 'none');
