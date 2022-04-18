@@ -150,7 +150,7 @@ function procesaEspiral(json){
         })
 
 
-      var tooltip = d3.select("#chart")
+      var tooltip = d3.select("#graph")
       .append('div')
       .attr('class', 'tooltip');
 
