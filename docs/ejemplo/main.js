@@ -9,7 +9,7 @@ const formatDate = (date) => {
 }
 const formatDateMonth = (date) => {
   const now = new Date(date);
-  const [monthStr] = `${now.getMonth()}`.padStart(2, '0');
+  const [monthStr] = ((now.getMonth() + 1) < 10 ? '0' : '') + (now.getMonth() + 1);
   return monthStr
 }
 function procesaEspiral(json){
@@ -169,7 +169,7 @@ function procesaEspiral(json){
 
       })
       .on('mousemove', function(d) {
-          tooltip.style('top', (d3.event.layerY + 10) + 'px')
+          tooltip.style('top', (d3.event.layerY + 8) + 'px')
           .style('left', (d3.event.layerX - 25) + 'px');
       })
       .on('mouseout', function(d) {
