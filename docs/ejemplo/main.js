@@ -5,7 +5,6 @@ function processJSON(json){
     rccdata.push([i,json[i]]);  
     console.log(json.length);
   }
-  alert(rccdata.length);
 }
 fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL')
   .then(response => response.json())
@@ -49,7 +48,8 @@ var width = 500,
       .attr("d", spiral)
       .style("fill", "none")
       .style("stroke", "steelblue");
-
+    
+    alert(rccdata.length);
     var spiralLength = path.node().getTotalLength(),
         N = rccdata.length,
         barWidth = (spiralLength / N) - 1;
