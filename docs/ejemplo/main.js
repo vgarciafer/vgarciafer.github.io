@@ -1,4 +1,4 @@
-fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL')
+fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=NY')
   .then(response => response.json())
   .then(procesaEspiral);
 
@@ -155,7 +155,7 @@ function procesaEspiral(json){
       .on('mouseover', function(d) {
 
          // tooltip.select('.date').html("Category: <b>" + d.cat + "</b>");
-          tooltip.select('.value').html("Total Deaths: <b>" + Math.round(d.value*100)/100 + "<b>");
+          tooltip.select('.value').html("New York: " + d.Date + "Total Deaths: <b>" + Math.round(d.value*100)/100 + "<b>");
 
           d3.select(this)
           .style("fill","#FFFFFF")
