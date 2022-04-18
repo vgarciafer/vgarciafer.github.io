@@ -41,7 +41,7 @@ function procesaEspiral(json){
       .domain([start, end])
       .range([40, r]);
 
-    var svg = d3.select("#graph").append("svg")
+    var svg = d3.select("#chart").append("svg")
       .attr("width", width + margin.right + margin.left)
       .attr("height", height + margin.left + margin.right)
       .append("g")
@@ -150,7 +150,7 @@ function procesaEspiral(json){
         })
 
 
-      var tooltip = d3.select("#graph")
+      var tooltip = d3.select("#chart")
       .append('div')
       .attr('class', 'tooltip');
 
