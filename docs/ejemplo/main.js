@@ -4,7 +4,6 @@ fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL')
 
 function procesaEspiral(json){
     var rccdata = [];
-    var rccdata2 = [];
     for(let i = 0; i < json.length; i++){ 
       rccdata.push([i,json[i]]);  
     }
@@ -13,7 +12,7 @@ function procesaEspiral(json){
       height = 500,
       start = 0,
       end = 2.25,
-      numSpirals = 4;
+      numSpirals = 6;
 
     var theta = function(r) {
       return numSpirals * Math.PI * r;
