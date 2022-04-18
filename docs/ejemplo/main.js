@@ -3,7 +3,7 @@ data = d3.json("https://data.cdc.gov/resource/9mfq-cb36.json?state=AL")
 fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL')
       .then(res => res.json())
       .then(data => {   
-        let rccdata= data;
+        var rccdata= data;
         console.log(data[0]);
       })   
 var width = 500,
