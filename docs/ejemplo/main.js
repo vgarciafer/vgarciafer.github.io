@@ -4,7 +4,7 @@ fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=NY')
 
 
 const formatDate = (date) => {
-  const [dateStr] = new Date(date).toISOString().split('T')
+  const [dateStr] = new Date(date).toLocaleDateString('es-ES')
   return dateStr
 }
 const formatDateMonth = (date) => {
