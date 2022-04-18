@@ -4,14 +4,15 @@ function getData(){
     fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL')
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+        console.log(data.length);
         return data;
       })
       .catch(error => console.log(error))
   }
   
  rccdata = getData();
-
+ alert(rccdata);
+ alert(rccdata.length);
 var width = 500,
       height = 500,
       start = 0,
