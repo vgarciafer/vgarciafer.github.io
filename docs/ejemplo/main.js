@@ -11,11 +11,11 @@ function procesaEspiral(json){
     for(let i = 0; i < json.length; i++){ 
       rccdata.push([i,json[i]]);  
     }
-    var width = 600,
-      height = 600,
+    var width = 550,
+      height = 550,
       start = 0,
       end = 2.25,
-      numSpirals = 8;
+      numSpirals = 5;
 
     var theta = function(r) {
       return numSpirals * Math.PI * r;
