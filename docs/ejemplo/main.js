@@ -2,14 +2,18 @@ fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=NY')
   .then(response => response.json())
   .then(procesaEspiral);
 
+const formatDate = (date) => {
+  const [dateStr] = new Date(date).toISOString().split('T')
+  return dateStr
+}
 function procesaEspiral(json){
     var rccdata = [];
     for(let i = 0; i < json.length; i++){ 
       rccdata.push([i,json[i]]);  
     }
     
-    var width = 500,
-      height = 500,
+    var width = 600,
+      height = 600,
       start = 0,
       end = 2.25,
       numSpirals = 6;
@@ -111,9 +115,9 @@ function procesaEspiral(json){
         .data(someData)
         .enter()
         .append("text")
-        .attr("dy", 10)
+        .attr("dy", 12)
         .style("text-anchor", "start")
-        .style("font", "10px arial")
+        .style("font", "12px arial")
         .append("textPath")
         // only add for the first of each month
         .filter(function(d){
@@ -147,15 +151,15 @@ function procesaEspiral(json){
       svg.selectAll("rect")
       .on('mouseover', function(d) {
 
-          tooltip.select('.value').html("New York: " + timeScale(d.date) + " Total Deaths: <b>" + Math.round(d.value*100)/100 + "<b>");
+          tooltip.select('.value').html("New York: <br>" + formatDate(d.date) + " Total Deaths: <b>" + Math.round(d.value*100)/100 + "<b>");
 
           d3.select(this)
           .style("fill","#FFFFFF")
           .style("stroke","#000000")
-          .style("stroke-width","2px");
+          .style("stroke-width","3px");
 
           tooltip.style('display', 'block');
-          tooltip.style('opacity',2);
+          tooltip.style('opacity',3);
 
       })
       .on('mousemove', function(d) {
