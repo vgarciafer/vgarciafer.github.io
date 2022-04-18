@@ -172,6 +172,19 @@ function procesaEspiral(json){
           tooltip.style('opacity',3);
 
       })
+     .on('click', function(d) {
+
+          tooltip.select('.value').html(formatDate(d.date) + " <br>" + formatDateMonth(d.date) +" <br> Nuevos fallecidos <br> " + d.parcial +"<br> Fallecidos totales: <b>" + Math.round(d.value*100)/100 + "<b>");
+
+          d3.select(this)
+          .style("fill","#FFFFFF")
+          .style("stroke","#000000")
+          .style("stroke-width","3px");
+
+          tooltip.style('display', 'block');
+          tooltip.style('opacity',3);
+
+      })
       .on('mousemove', function(d) {
           tooltip.style('top', (d3.event.layerY + 10) + 'px')
           .style('left', (d3.event.layerX - 25) + 'px');
