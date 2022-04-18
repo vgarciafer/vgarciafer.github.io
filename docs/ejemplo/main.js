@@ -1,14 +1,5 @@
 var rccdata = [];
 
-function processJSON(json){
-  for(let i = 0; i < json.length; i++){
-    rccdata.push([i,json[i]]);   
-  }
-  console.log(rccdata.length);
-}
-fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL')
-  .then(response => response.json())
-  .then(processJSON);
 
 var width = 500,
       height = 500,
@@ -49,136 +40,145 @@ var width = 500,
       .style("fill", "none")
       .style("stroke", "steelblue");
     
-    alert(rccdata.length);
+   
+fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL')
+  .then(response => response.json())
+  .then(processJSON);
+
+function processJSON(json){
+    for(let i = 0; i < json.length; i++){ rccdata.push([i,json[i]]);   }
     var spiralLength = path.node().getTotalLength(),
-        N = rccdata.length,
-        barWidth = (spiralLength / N) - 1;
-    var someData = [];
-    for (var i = 0; i < N; i++) {
-      var currentDate = new Date();
-      currentDate.setDate(currentDate.getDate() + i);
-      someData.push({
-        date: currentDate,
-        value: rccdata[i].tot_cases
-      });
-    }
-   var timeScale = d3.scaleTime()
-      .domain(d3.extent(someData, function(d){
-        return d.date;
-      }))
-      .range([0, spiralLength]);
-    
-    var ordinalScale = d3.scaleBand()
-      //.domain(categories)
-      .domain(rccdata.map(function(d){ return d.rcc; }))
-      // This is the code to implement removing the above .domain(categories) statement
-      .range([0, 1200000]);
+          N = rccdata.length,
+          barWidth = (spiralLength / N) - 1;
+      var someData = [];
+      for (var i = 0; i < N; i++) {
+        var currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() + i);
+        someData.push({
+          date: currentDate,
+          value: rccdata[i].tot_cases
+        });
+      }
+     var timeScale = d3.scaleTime()
+        .domain(d3.extent(someData, function(d){
+          return d.date;
+        }))
+        .range([0, spiralLength]);
 
-    // yScale for the bar height
-    var yScale = d3.scaleLinear()
-      .domain([0, d3.max(someData, function(d){
-        return d.value;
-      })])
-      .range([0, (r / numSpirals) - 30]);
+      var ordinalScale = d3.scaleBand()
+        //.domain(categories)
+        .domain(rccdata.map(function(d){ return d.rcc; }))
+        // This is the code to implement removing the above .domain(categories) statement
+        .range([0, 1200000]);
 
-    svg.selectAll("rect")
-      .data(someData)
-      .enter()
-      .append("rect")
-      .attr("x", function(d,i){
+      // yScale for the bar height
+      var yScale = d3.scaleLinear()
+        .domain([0, d3.max(someData, function(d){
+          return d.value;
+        })])
+        .range([0, (r / numSpirals) - 30]);
 
-        var linePer = timeScale(d.date),
-            posOnLine = path.node().getPointAtLength(linePer),
-            angleOnLine = path.node().getPointAtLength(linePer - barWidth);
+      svg.selectAll("rect")
+        .data(someData)
+        .enter()
+        .append("rect")
+        .attr("x", function(d,i){
 
-        d.linePer = linePer; // % distance are on the spiral
-        d.x = posOnLine.x; // x postion on the spiral
-        d.y = posOnLine.y; // y position on the spiral
+          var linePer = timeScale(d.date),
+              posOnLine = path.node().getPointAtLength(linePer),
+              angleOnLine = path.node().getPointAtLength(linePer - barWidth);
 
-        d.a = (Math.atan2(angleOnLine.y, angleOnLine.x) * 180 / Math.PI) - 90; //angle at the spiral position
+          d.linePer = linePer; // % distance are on the spiral
+          d.x = posOnLine.x; // x postion on the spiral
+          d.y = posOnLine.y; // y position on the spiral
 
-        return d.x;
-      })
-      .attr("y", function(d){
-        return d.y;
-      })
-      .attr("width", function(d){
-        return barWidth;
-      })
-      .attr("height", function(d){
-        return yScale(d.value);
-      })
-      .style("fill", function(d){return color(d.group);})
-      .style("stroke", "none")
-      .attr("transform", function(d){
-        return "rotate(" + d.a + "," + d.x  + "," + d.y + ")"; // rotate the bar
-      });
+          d.a = (Math.atan2(angleOnLine.y, angleOnLine.x) * 180 / Math.PI) - 90; //angle at the spiral position
 
-    // add date labels
-    var tF = d3.timeFormat("%b %Y"),
-        firstInMonth = {};
-
-    svg.selectAll("text")
-      .data(someData)
-      .enter()
-      .append("text")
-      .attr("dy", 10)
-      .style("text-anchor", "start")
-      .style("font", "10px arial")
-      .append("textPath")
-      // only add for the first of each month
-      .filter(function(d){
-        var sd = tF(d.date);
-        if (!firstInMonth[sd]){
-          firstInMonth[sd] = 1;
-          return true;
-        }
-        return false;
-      })
-      .text(function(d){
-        return tF(d.date);
-      })
-      // place text along spiral
-      .attr("xlink:href", "#spiral")
-      .style("fill", "grey")
-      .attr("startOffset", function(d){
-        return ((d.linePer / spiralLength) * 100) + "%";
-      })
-
-
-    var tooltip = d3.select("#chart")
-    .append('div')
-    .attr('class', 'tooltip');
-
-    tooltip.append('div')
-    .attr('class', 'date');
-    tooltip.append('div')
-    .attr('class', 'value');
-
-    svg.selectAll("rect")
-    .on('mouseover', function(d) {
-
-       // tooltip.select('.date').html("Category: <b>" + d.cat + "</b>");
-        tooltip.select('.value').html("Value: <b>" + Math.round(d.value*100)/100 + "<b>");
-
-        d3.select(this)
-        .style("fill","#FFFFFF")
-        .style("stroke","#000000")
-        .style("stroke-width","2px");
-
-        tooltip.style('display', 'block');
-        tooltip.style('opacity',2);
-
-    })
-    .on('mousemove', function(d) {
-        tooltip.style('top', (d3.event.layerY + 10) + 'px')
-        .style('left', (d3.event.layerX - 25) + 'px');
-    })
-    .on('mouseout', function(d) {
-        d3.selectAll("rect")
-        .style("fill", function(d){return color(d.cat);})
+          return d.x;
+        })
+        .attr("y", function(d){
+          return d.y;
+        })
+        .attr("width", function(d){
+          return barWidth;
+        })
+        .attr("height", function(d){
+          return yScale(d.value);
+        })
+        .style("fill", function(d){return color(d.group);})
         .style("stroke", "none")
+        .attr("transform", function(d){
+          return "rotate(" + d.a + "," + d.x  + "," + d.y + ")"; // rotate the bar
+        });
 
-        tooltip.style('display', 'none');
-        tooltip.style('opacity',0);
-    });
+      // add date labels
+      var tF = d3.timeFormat("%b %Y"),
+          firstInMonth = {};
+
+      svg.selectAll("text")
+        .data(someData)
+        .enter()
+        .append("text")
+        .attr("dy", 10)
+        .style("text-anchor", "start")
+        .style("font", "10px arial")
+        .append("textPath")
+        // only add for the first of each month
+        .filter(function(d){
+          var sd = tF(d.date);
+          if (!firstInMonth[sd]){
+            firstInMonth[sd] = 1;
+            return true;
+          }
+          return false;
+        })
+        .text(function(d){
+          return tF(d.date);
+        })
+        // place text along spiral
+        .attr("xlink:href", "#spiral")
+        .style("fill", "grey")
+        .attr("startOffset", function(d){
+          return ((d.linePer / spiralLength) * 100) + "%";
+        })
+
+
+      var tooltip = d3.select("#chart")
+      .append('div')
+      .attr('class', 'tooltip');
+
+      tooltip.append('div')
+      .attr('class', 'date');
+      tooltip.append('div')
+      .attr('class', 'value');
+
+      svg.selectAll("rect")
+      .on('mouseover', function(d) {
+
+         // tooltip.select('.date').html("Category: <b>" + d.cat + "</b>");
+          tooltip.select('.value').html("Value: <b>" + Math.round(d.value*100)/100 + "<b>");
+
+          d3.select(this)
+          .style("fill","#FFFFFF")
+          .style("stroke","#000000")
+          .style("stroke-width","2px");
+
+          tooltip.style('display', 'block');
+          tooltip.style('opacity',2);
+
+      })
+      .on('mousemove', function(d) {
+          tooltip.style('top', (d3.event.layerY + 10) + 'px')
+          .style('left', (d3.event.layerX - 25) + 'px');
+      })
+      .on('mouseout', function(d) {
+          d3.selectAll("rect")
+          .style("fill", function(d){return color(d.cat);})
+          .style("stroke", "none")
+
+          tooltip.style('display', 'none');
+          tooltip.style('opacity',0);
+      });
+
+  }
+    
