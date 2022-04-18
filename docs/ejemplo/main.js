@@ -10,10 +10,8 @@ const formatDate = (date) => {
 const formatDateMonth = (date) => {
   try{ 
     const now = new Date(date);
-    const [monthStr] = new Date(date).toISOString().slice(5,7);
-   alert(new Date(date).toISOString().slice(0,10));
-      alert(new Date(date).toISOString().slice(5,10));
-    alert(new Date(date).toISOString().slice(6,9));
+    const [monthStr] = new Date(date).toISOString().slice(5,6);
+      alert(new Date(date).toISOString().slice(5,6));
      return monthStr;
   }catch (error) {
    console.error(error);
