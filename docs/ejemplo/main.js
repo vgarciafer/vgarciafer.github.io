@@ -1,3 +1,5 @@
+//Original de: https://gist.github.com/arpitnarechania/027e163073864ef2ac4ceb5c2c0bf616 
+//license MIT
 fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=NY')
   .then(response => response.json())
   .then(procesaEspiral);
