@@ -8,7 +8,8 @@ const formatDate = (date) => {
   return dateStr
 }
 const formatDateMonth = (date) => {
-  const [monthStr] = new Date(date).toISOString().substr(5, 6).replace('T', ' ')
+  const now = new Date(date);
+  const [monthStr] = `${now.getMonth()}`.padStart(2, '0');
   return monthStr
 }
 function procesaEspiral(json){
