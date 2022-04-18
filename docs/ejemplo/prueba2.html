@@ -13,14 +13,14 @@
 	    
 		// fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL').then(res => res.json()).then(return res);
 	 
-		const url = 'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits';
+		const url = 'https://data.cdc.gov/resource/9mfq-cb36.json?state=AL';
 		const response = await fetch(url);
-		const commits = await response.json(); // read response body and parse as JSON
-		alert(commits[0].author.login);
+		const data = await response.json(); // read response body and parse as JSON
+		alert(data[0].submission_date);
       }
 		
 	
-    	 const rccdata =await getData();
+    	 let rccdata =await getData();
  
 	  </script>
     <script type="text/javascript" src="main.js"></script>
