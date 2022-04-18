@@ -8,8 +8,8 @@ const formatDate = (date) => {
   return dateStr
 }
 const formatDateMonth = (date) => {
-  const [dateStr] = new Date(date).toISOString().substr(4,6)
-  return dateStr
+  const [monthStr] = new Date(date).toISOString().substr(6,7)
+  return monthStr
 }
 function procesaEspiral(json){
     var rccdata = [];
