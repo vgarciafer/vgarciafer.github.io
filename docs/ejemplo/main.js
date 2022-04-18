@@ -1,19 +1,16 @@
 var rccdata = [];
 
-function getData(){
-    fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL')
-      .then(res => res.json())
-      .then(data => {
-        console.log(data.length);
-        rccdata = data;
-        return rccdata;
-      })
-      .catch(error => console.log(error))
+
+function processJSON(json){
+  for(let i = 0; i < json.length; i++)
+  {
+    console.log(json[i])
   }
-  
- rccdata = getData();
- alert(rccdata);
- alert(rccdata.length);
+}
+fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL')
+  .then(getResponse)
+  .then(processJSON);
+
 var width = 500,
       height = 500,
       start = 0,
