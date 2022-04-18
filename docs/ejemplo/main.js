@@ -1,12 +1,9 @@
- 
+var rccdata;
 data = d3.json("https://data.cdc.gov/resource/9mfq-cb36.json?state=AL")
 fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=AL')
       .then(res => res.json())
-      .then(data => {   
-        var rccdata= data;
-        console.log(rccdata[0]);
-        console.log(rccdata.length);
-      })   
+      .then(data => rccdata= data) 
+      .then(() => console.log(rccdata))
 var width = 500,
       height = 500,
       start = 0,
