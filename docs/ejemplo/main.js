@@ -4,11 +4,11 @@ fetch('https://data.cdc.gov/resource/9mfq-cb36.json?state=NY')
 
 
 const formatDate = (date) => {
-  const [dateStr] = new Date(date).toLocaleDateString('es-ES')
+  const [dateStr] = new Date(date).toISOString().split("T")
   return dateStr
 }
 const formatDateMonth = (date) => {
-  const [dateStr] = new Date(date).toLocaleDateString('es-ES', { month: '2-digit'})
+  const [dateStr] = new Date(date).toISOString().substr(4,6)
   return dateStr
 }
 function procesaEspiral(json){
