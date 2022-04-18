@@ -23,7 +23,8 @@ function procesaEspiral(json){
       height = 550,
       start = 0,
       end = 2.25,
-      numSpirals = 6;
+      numSpirals = 6; 
+      margin = {top:50,bottom:50,left:auto,right:auto};
 
     var theta = function(r) {
       return numSpirals * Math.PI * r;
