@@ -8,7 +8,7 @@ const formatDate = (date) => {
   return dateStr
 }
 const formatDateMonth = (date) => {
-  const [monthStr] = new Date(date).toISOString().substr(6,7)
+  const [monthStr] = new Date(date).toISOString().substr(5, 6).replace('T', ' ')
   return monthStr
 }
 function procesaEspiral(json){
@@ -63,7 +63,7 @@ function procesaEspiral(json){
       for (var i = 0; i < N; i++) {
         someData.push({
           date: Date.parse(rccdata[i][1]["submission_date"]),
-          value: rccdata[i][1]["tot_cases"],
+          value: rccdata[i][1]["tot_death"],
           parcial: rccdata[i][1]["new_death"]
         });
       }
@@ -156,7 +156,7 @@ function procesaEspiral(json){
       svg.selectAll("rect")
       .on('mouseover', function(d) {
 
-          tooltip.select('.value').html(formatDate(d.date) + " <br>" + formatDateMonth(d.date) +" <br> Nuevos fallecidos <br> " + d.parcial +" Fallecidos totales: <b>" + Math.round(d.value*100)/100 + "<b>");
+          tooltip.select('.value').html(formatDate(d.date) + " <br>" + formatDateMonth(d.date) +" <br> Nuevos fallecidos <br> " + d.parcial +"<br> Fallecidos totales: <b>" + Math.round(d.value*100)/100 + "<b>");
 
           d3.select(this)
           .style("fill","#FFFFFF")
