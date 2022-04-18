@@ -10,7 +10,7 @@ function procesaEspiral(json){
       height = 500,
       start = 0,
       end = 2.25,
-      numSpirals = 1;
+      numSpirals = 3;
 
     var theta = function(r) {
       return numSpirals * Math.PI * r;
@@ -51,10 +51,8 @@ function procesaEspiral(json){
           barWidth = (spiralLength / N) - 1;
       var someData = [];
       for (var i = 0; i < N; i++) {
-        var currentDate = new Date();
-        currentDate.setDate(currentDate.getDate() + i);
         someData.push({
-          date: currentDate,
+          date: Date.parse(rccdata[i].submission_date),
           value: rccdata[i].tot_cases
         });
       }
