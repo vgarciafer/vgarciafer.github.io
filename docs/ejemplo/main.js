@@ -156,7 +156,7 @@ function procesaEspiral(json){
       svg.selectAll("rect")
       .on('mouseover', function(d) {
 
-          tooltip.select('.value').html("New York: <br>" + formatDate(d.date) + " <br> Fallecidos totales: <b>" + Math.round(d.value*100)/100 + "<b>");
+          tooltip.select('.value').html(formatDate(d.date) + " <br>" + formatDateMonth(d.date) +" <br> Fallecidos totales: <b>" + Math.round(d.value*100)/100 + "<b>");
 
           d3.select(this)
           .style("fill","#FFFFFF")
