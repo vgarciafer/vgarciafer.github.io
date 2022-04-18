@@ -5,7 +5,8 @@ function getData(){
       .then(res => res.json())
       .then(data => {
         console.log(data.length);
-        return data;
+        rccdata = data;
+        return rccdata;
       })
       .catch(error => console.log(error))
   }
