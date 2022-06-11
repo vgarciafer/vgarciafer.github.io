@@ -4,7 +4,7 @@ body{
    color: #000078;
  }  
 
-.titulo{padding-top:1%;line-height:5rem}
+.titulo{padding-top:0.5%;line-height:4rem}
 .titulo{font-size:2.5em;padding-left:2em;padding-right:2em;background-color:#73EDFF}
 .texto{padding-top:1px;padding-left:5em;padding-right:5em}
 .pie{font-size:0.9em;padding-top:1em;padding-left:6em;padding-right:15em}
