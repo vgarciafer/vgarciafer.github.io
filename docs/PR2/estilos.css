@@ -1,4 +1,3 @@
-.titulo{display:none}
 .titulo{padding-top:1rem;line-height:2rem}header
 .titulo{font-family:uoc-sans,"Helvetica Neue","Helvetica","Arial","sans-serif";font-size:2rem}@media(min-width:48em) and (max-width:61.99em){
 .titulo{border-bottom-width:4px;height:48px}}
