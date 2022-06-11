@@ -6,7 +6,5 @@ body{
 
 .titulo{padding-top:40 rem;line-height:5rem}
 .titulo{font-size:10em;padding-left:20px;font-size:10px;background-color:#73EDFF}
-@media(min-width:48em) and (max-width:61.99em){
-.texto{fpadding-top:1px;padding-left:20px;}
-@media(min-width:10rem) and (max-width:14rem){
+.texto{fpadding-top:1px;padding-left:20px;
 
