@@ -1,5 +1,7 @@
-.titulo{padding-top:1rem;line-height:2rem}header
-.titulo{font-family:uoc-sans,"Helvetica Neue","Helvetica","Arial","sans-serif";font-size:2rem}@media(min-width:48em) and (max-width:61.99em){
+.titulo{padding-top:5 rem;line-height:2rem}
+.titulo{font-family:uoc-sans,"Helvetica Neue","Helvetica","Arial","sans-serif";font-size:2rem;color=#000078;padding-left:10px;}
+@media(min-width:48em) and (max-width:61.99em){
 .titulo{border-bottom-width:4px;height:48px}}
-.titulo.font-default{font-family:uoc-sans,"Helvetica Neue","Helvetica","Arial","sans-serif" !important}
-.titulo.font-alternate{font-family:"uoc-serif" !important}
+.texto{font-family:uoc-sans,"Helvetica Neue","Helvetica","Arial","sans-serif";font-size:2rem;color=#000078;padding-top:2px;padding-left:10px;}
+@media(min-width:10em) and (max-width:14em){
+
