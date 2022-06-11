@@ -1,0 +1,6 @@
+.title{display:none}
+.title{padding-top:1rem;line-height:2rem}header
+.title{font-family:uoc-sans,"Helvetica Neue","Helvetica","Arial","sans-serif";font-size:2rem}@media(min-width:48em) and (max-width:61.99em){
+.title{border-bottom-width:4px;height:48px}}
+.title.font-default{font-family:uoc-sans,"Helvetica Neue","Helvetica","Arial","sans-serif" !important}
+.title.font-alternate{font-family:"uoc-serif" !important}
