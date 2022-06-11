@@ -1,6 +1,6 @@
 .titulo{padding-top:40 rem;line-height:10rem}
-.titulo{font-family:uoc-sans,"Helvetica Neue","Helvetica","Arial","sans-serif";font-size:2rem;color="#000078";padding-left:15px;}
+.titulo{font-family:uoc-sans,"Helvetica Neue","Helvetica","Arial","sans-serif";font-size:2rem;color=#000078;padding-left:15px;}
 @media(min-width:48em) and (max-width:61.99em){
-.texto{font-family:uoc-sans,"Helvetica Neue","Helvetica","Arial","sans-serif";font-size:2rem;color="#000078";padding-top:2px;padding-left:15px;}
+.texto{font-family:uoc-sans,"Helvetica Neue","Helvetica","Arial","sans-serif";font-size:2rem;color=#000078;padding-top:2px;padding-left:15px;}
 @media(min-width:10rem) and (max-width:14rem){
 
